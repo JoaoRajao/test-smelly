@@ -79,13 +79,12 @@ def build():
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     doc = SimpleDocTemplate(str(OUTPUT), pagesize=(21 * cm, 29.7 * cm), rightMargin=2 * cm, leftMargin=2 * cm, topMargin=2 * cm, bottomMargin=2.1 * cm)
     nome = os.environ.get("ALUNO_NOME", "Joao Vitor Pedersoli Rajao")
-    matricula = os.environ.get("ALUNO_MATRICULA", "[Matrícula a preencher]")
     story = []
 
     # Página 1: capa.
     story += [Spacer(1, 4.2 * cm), p("DISCIPLINA: TESTE DE SOFTWARE", "CoverSmall"), Spacer(1, 1.3 * cm),
               p("Refatoração de Testes e<br/>Detecção de Test Smells", "CoverBig"), Spacer(1, 2.5 * cm),
-              p(f"Aluno(a): {nome}", "CoverSmall"), p(f"Matrícula: {matricula}", "CoverSmall"),
+              p(f"Aluno(a): {nome}", "CoverSmall"),
               Spacer(1, 5.5 * cm), p("Relatório de análise, refatoração e validação", "CoverSmall"),
               p("Outubro de 2026", "CoverSmall"), PageBreak()]
 
